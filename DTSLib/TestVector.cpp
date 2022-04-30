@@ -8,15 +8,15 @@
 int main() {
     DTS::Vector<int> v;
 
-    if (v.is_empty())
-        std::cout << "EMPTY" << std::endl;
-
     v.push_back(45);
     v.push_back(16);
+    v.insert(8, 1);
+    v.insert(4, 0);
+    v.insert(18, 3);
 
-    std::cout << v[0] << std::endl;
     std::cout << "BACK " << v.back() << std::endl;
     std::cout << "SIZE " << v.size() << std::endl;
+    std::cout << "POP BACK " << v.pop_back() << std::endl;
 
     v.print();
 }
