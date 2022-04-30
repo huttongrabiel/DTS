@@ -133,6 +133,24 @@ public:
 
         m_size--;
     };
+
+    [[maybe_unused]] void erase(int start, int end)
+    {
+        int index = 0;
+        int erase_count = 0;
+
+        for (int i = 0; i < m_size; i++) {
+            if (i >= start && i < end) {
+                erase_count++;
+                continue;
+            }
+            arr[index] = arr[i];
+            index++;
+        }
+
+        m_size -= erase_count;
+    };
+
     [[maybe_unused]] T pop_back()
     {
         T* temp = new T[m_size-1];
