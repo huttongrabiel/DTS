@@ -4,7 +4,6 @@
 
 #pragma once
 
-#include <stdlib.h>
 #include <iostream>
 
 /*
@@ -157,11 +156,11 @@ public:
         }
     };
 
-    T back() { return arr[m_size-1]; }
+    [[maybe_unused]] T back() { return arr[m_size-1]; }
 
-    size_t size() const { return m_size; }
+    [[maybe_unused]][[nodiscard]] size_t size() const { return m_size; }
 
-    bool is_empty() const { return m_size == 0; }
+    [[maybe_unused]][[nodiscard]] bool is_empty() const { return m_size == 0; }
 
 private:
     size_t m_size;
