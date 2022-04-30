@@ -156,6 +156,8 @@ public:
         }
     };
 
+    [[maybe_unused]] void clear() { delete[] arr; arr = new T[1]; m_size = 0; capacity = 1; }
+
     [[maybe_unused]] T back() { return arr[m_size-1]; }
 
     [[maybe_unused]] T front() { return arr[0]; }
