@@ -122,16 +122,20 @@ public:
         }
     };
 
-    [[maybe_unused]] void pop_back()
+    [[maybe_unused]] T pop_back()
     {
         T* temp = new T[m_size-1];
 
+        auto popped_element = arr[m_size-1];
+
         for (int i = 0; i < m_size-1; i++)
-            temp[i] == arr[i];
+            temp[i] = arr[i];
 
         delete[] arr;
         arr = temp;
         m_size--;
+
+        return popped_element;
     };
 
     [[maybe_unused]] void print()
