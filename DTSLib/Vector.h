@@ -158,6 +158,8 @@ public:
 
     [[maybe_unused]] T back() { return arr[m_size-1]; }
 
+    [[maybe_unused]] T front() { return arr[0]; }
+
     [[maybe_unused]][[nodiscard]] size_t size() const { return m_size; }
 
     [[maybe_unused]][[nodiscard]] bool is_empty() const { return m_size == 0; }
