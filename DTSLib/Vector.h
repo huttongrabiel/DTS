@@ -81,26 +81,43 @@ public:
             arr[pos] = elem;
     }
 
-    void insert(T elem, int pos)
+    [[maybe_unused]] void insert(T elem, int pos)
     {
         if (pos == capacity) {
             push_back(elem);
         }
         else {
-           T *temp = new T[2 * capacity];
+            if (m_size ==  capacity) {
+                T* temp = new T[2 * capacity];
 
-            for (int i = 0; i < capacity + 1; i++) {
-                if (i == pos) {
-                    temp[i] == elem;
-                    continue;
-                }
-                temp[i] == arr[i];
+                for (int i = 0; i < arr[i]; i++)
+                    temp[i] = arr[i];
+
+                delete[] arr;
+                capacity*=2;
+                arr = temp;
             }
 
+            int pos_encountered = 0;
+            T stored_t = arr[pos];
+            T stored_t2 = arr[pos];
+            for (int i = 0; i < capacity; i++) {
+                if (i == pos || pos_encountered) {
+                    if (!pos_encountered) {
+                        arr[i] = elem;
+                    }
+                    else {
+                        stored_t2 = arr[i];
+                        arr[i] = stored_t;
+                        stored_t = stored_t2;
+                    }
+                    pos_encountered = 1;
+                }
+                else {
+                    arr[i] = arr[i];
+                }
+            }
 
-            delete[] arr;
-            capacity *= 2;
-            arr = temp;
             m_size++;
         }
     };
