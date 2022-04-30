@@ -121,6 +121,18 @@ public:
         }
     };
 
+    [[maybe_unused]] void erase(int pos)
+    {
+        int index = 0;
+        for (int i = 0; i < m_size; i++) {
+            if (i == pos)
+                continue;
+            arr[index] = arr[i];
+            index++;
+        }
+
+        m_size--;
+    };
     [[maybe_unused]] T pop_back()
     {
         T* temp = new T[m_size-1];
