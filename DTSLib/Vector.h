@@ -147,9 +147,6 @@ public:
 
     T operator[](int pos)
     {
-        if (pos >= m_size)
-            return {};
-
         for (int i = 0; i < m_size; i++) {
             if (i == pos)
                 return arr[i];
