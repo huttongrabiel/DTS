@@ -8,27 +8,24 @@
 
 /*
  * Vectors have
- *  - constructor
- *  - destructor
+ *  - constructor         X
+ *  - destructor          X
  *  - operator=
  *  -
  *
- *  - push_back()
- *  - insert()
- *  - size()
- *  - front()
- *  - back()
- *  - pop_back()
- *  - empty()
- *  - clear()
- *  - insert()
- *  - erase()
+ *  - push_back()         X
+ *  - insert()            X
+ *  - size()              X
+ *  - front()             X
+ *  - back()              X
+ *  - pop_back()          X
+ *  - clear()             X
+ *  - erase(int)          X
+ *  - erase(start, end)   X
  *  - swap()
  *
- *  - at()
- *  - operator[]
- *  - front()
- *  - back()
+ *  - at()                X
+ *  - operator[]          X
  *  - data()
  *
  *  - operator==
