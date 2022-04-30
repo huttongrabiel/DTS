@@ -54,17 +54,18 @@ public:
         delete[] arr;
     }
 
-    void push_back(T elem)
+    [[maybe_unused]] void push_back(T elem)
     {
         if (m_size == capacity) {
-            T *temp = new T[2 * capacity];
+            T* temp = new T[2 * capacity];
 
-        for (int i = 0; i < capacity; i++)
-            temp[i] == arr[i];
+            for (int i = 0; i < capacity; i++) {
+                temp[i] = arr[i];
+            }
 
-        delete[] arr;
-        capacity *= 2;
-        arr = temp;
+            delete[] arr;
+            capacity *= 2;
+            arr = temp;
         }
 
         arr[m_size] = elem;
