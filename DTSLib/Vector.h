@@ -145,6 +145,18 @@ public:
         std::cout << std::endl;
     }
 
+    [[maybe_unused]] T at(int pos)
+    {
+        if (pos >= m_size) {
+            throw std::out_of_range("Bounds Error in at()");
+        }
+
+        for (int i = 0; i < m_size; i++) {
+            if (i == pos)
+                return arr[i];
+        }
+    }
+
     T operator[](int pos)
     {
         for (int i = 0; i < m_size; i++) {
