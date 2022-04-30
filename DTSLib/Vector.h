@@ -45,6 +45,15 @@ public:
         m_size = 0;
     }
 
+    Vector(const Vector& other) {
+        arr = new T[other.m_size];
+        capacity = other.capacity;
+        m_size = other.m_size;
+
+        for (int i = 0; i < other.size(); i++)
+            arr[i] = other.arr[i];
+    }
+
     ~Vector()
     {
         delete[] arr;
@@ -191,6 +200,30 @@ public:
                 return arr[i];
         }
     };
+
+    Vector& operator=(const Vector& other)
+    {
+        if (this->size() != other.size()) {
+            T* temp = new T[other.size()];
+
+            for (int i = 0; i <= other.size(); i++) {
+                temp[i] = other.arr[i];
+            }
+
+            delete[] arr;
+            arr = temp;
+        }
+        else {
+            for (int i = 0; i < other.size(); i++) {
+                arr[i] = other.arr[i];
+            }
+        }
+
+        capacity = other.size();
+        m_size = other.size();
+
+        return *this;
+    }
 
     [[maybe_unused]] void clear() { delete[] arr; arr = new T[1]; m_size = 0; capacity = 1; }
 
