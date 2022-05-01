@@ -10,7 +10,7 @@
  * Vectors have
  *  - constructor         X
  *  - destructor          X
- *  - operator=
+ *  - operator=           X
  *  -
  *
  *  - push_back()         X
@@ -28,7 +28,7 @@
  *  - operator[]          X
  *  - data()
  *
- *  - operator==
+ *  - operator==          X
  */
 
 namespace DTS {
