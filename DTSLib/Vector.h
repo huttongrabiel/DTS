@@ -7,11 +7,8 @@
 #include <iostream>
 
 /*
- * Vectors have
  *  - constructor         X
  *  - destructor          X
- *  - operator=           X
- *  -
  *
  *  - push_back()         X
  *  - insert()            X
@@ -22,12 +19,13 @@
  *  - clear()             X
  *  - erase(int)          X
  *  - erase(start, end)   X
- *  - swap()
+ *  - swap()              X
  *
  *  - at()                X
- *  - operator[]          X
- *  - data()
+ *  - data()              X
  *
+ *  - operator=           X
+ *  - operator[]          X
  *  - operator==          X
  */
 
