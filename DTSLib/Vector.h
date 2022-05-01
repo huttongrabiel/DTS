@@ -216,6 +216,11 @@ public:
         other.arr = temp2;
     }
 
+    [[maybe_unused]] T* data()
+    {
+        return arr;
+    }
+
     Vector& operator=(const Vector& other)
     {
         if (this->size() != other.size()) {
