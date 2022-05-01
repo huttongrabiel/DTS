@@ -201,6 +201,21 @@ public:
         }
     };
 
+    [[maybe_unused]] void swap(Vector& other)
+    {
+        auto temp = m_size;
+        m_size = other.m_size;
+        other.m_size = temp;
+
+        auto temp1 = capacity;
+        capacity = other.capacity;
+        other.capacity = temp;
+
+        T* temp2 = arr;
+        arr = other.arr;
+        other.arr = temp2;
+    }
+
     Vector& operator=(const Vector& other)
     {
         if (this->size() != other.size()) {
