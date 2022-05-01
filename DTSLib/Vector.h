@@ -225,6 +225,18 @@ public:
         return *this;
     }
 
+    bool operator==(const Vector& other)
+    {
+        if (other.m_size != m_size)
+           return false;
+
+        for (int i = 0; i < m_size; i++)
+            if (arr[i] != other.arr[i])
+                return false;
+
+        return true;
+    }
+
     [[maybe_unused]] void clear() { delete[] arr; arr = new T[1]; m_size = 0; capacity = 1; }
 
     [[maybe_unused]] T back() { return arr[m_size-1]; }
