@@ -68,7 +68,7 @@ Not worried about the why, just exploring.
 - [ ] stack
 - [ ] unordered_map
 - [ ] unordered_set
-- [ ] vector *   
+- [X] vector *   
 
 - [ ] iterator *   
 
