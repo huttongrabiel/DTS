@@ -93,7 +93,7 @@ public:
             if (m_size ==  capacity) {
                 T* temp = new T[2 * capacity];
 
-                for (int i = 0; i < arr[i]; i++)
+                for (int i = 0; i < capacity; i++)
                     temp[i] = arr[i];
 
                 delete[] arr;
