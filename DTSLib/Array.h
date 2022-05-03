@@ -72,6 +72,13 @@ struct Array {
         return arr[Size-1];
     }
 
+    constexpr void swap(Array& other)
+    {
+        auto temp = *this;
+        *this = other;
+        other = temp;
+    }
+
     constexpr Reference operator[](size_t index)
     {
         return arr[index];
