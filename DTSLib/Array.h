@@ -36,6 +36,22 @@ struct Array {
         return arr;
     }
 
+    constexpr Reference at(size_t index)
+    {
+        if (index >= Size)
+            throw std::out_of_range("Bounds Error");
+
+        return arr[index];
+    }
+
+    constexpr ConstReference at(size_t index) const
+    {
+        if (index >= Size)
+           throw std::out_of_range("Bounds Error");
+
+        return arr[index];
+    }
+
     constexpr Reference operator[](size_t index)
     {
         for (size_t i = 0; i < Size; i++) {
