@@ -54,20 +54,12 @@ struct Array {
 
     constexpr Reference operator[](size_t index)
     {
-        for (size_t i = 0; i < Size; i++) {
-            if (i == index)
-                return arr[i];
-        }
-        return arr[0];
+        return arr[index];
     }
 
     constexpr ConstReference operator[](size_t index) const
     {
-        for (size_t i = 0; i < Size; i++) {
-            if (i == index)
-                return arr[i];
-        }
-        return arr[0];
+        return arr[index];
     }
 };
 
