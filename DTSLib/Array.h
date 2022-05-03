@@ -79,6 +79,15 @@ struct Array {
         other = temp;
     }
 
+    [[nodiscard]] constexpr bool operator==(const Array<T, Size>& other) const
+    {
+        for (int i = 0; i < Size; i++)
+            if (arr[i] != other[i])
+                return false;
+
+        return true;
+    }
+
     constexpr Reference operator[](size_t index)
     {
         return arr[index];
