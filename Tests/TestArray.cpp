@@ -53,4 +53,17 @@ TEST_CASE( "Swap" ) {
     REQUIRE( first.front() == 4);
     REQUIRE( second.front() == 1);
 
+    REQUIRE( !(first == second) );
+}
+
+TEST_CASE( "==" ) {
+    DTS::Array<int, 3> first = {1, 2, 3};
+    DTS::Array<int, 3> second = {4, 5, 6};
+
+    REQUIRE( !(first == second) );
+
+    first.fill(3);
+    second.fill(3);
+
+    REQUIRE( first == second );
 }
