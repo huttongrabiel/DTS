@@ -9,9 +9,11 @@ include_directories("../DTSLib"
 find_package(Catch2 3 REQUIRED)
 
 set(TEST_SOURCE
+        TestArray.cpp
         TestVector.cpp)
 
 set(SOURCE_HEADERS
+        ../DTSLib/Array.h
         ../DTSLib/Vector.h)
 
 add_executable(DTSTests
