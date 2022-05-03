@@ -76,17 +76,17 @@ public:
     }
 
 
-    [[maybe_unused]] void replace(T elem, int pos)
+    [[maybe_unused]] void replace(T elem, int index)
     {
-        if (pos == capacity)
+        if (index == capacity)
             push_back(elem);
-        else if (pos < m_size)
-            arr[pos] = elem;
+        else if (index < m_size)
+            arr[index] = elem;
     }
 
-    [[maybe_unused]] void insert(T elem, int pos)
+    [[maybe_unused]] void insert(T elem, int index)
     {
-        if (pos == capacity) {
+        if (index == capacity) {
             push_back(elem);
         }
         else {
@@ -102,10 +102,10 @@ public:
             }
 
             int pos_encountered = 0;
-            T stored_t = arr[pos];
-            T stored_t2 = arr[pos];
+            T stored_t = arr[index];
+            T stored_t2 = arr[index];
             for (int i = 0; i < capacity; i++) {
-                if (i == pos || pos_encountered) {
+                if (i == index || pos_encountered) {
                     if (!pos_encountered) {
                         arr[i] = elem;
                     }
@@ -125,14 +125,14 @@ public:
         }
     };
 
-    [[maybe_unused]] void erase(int pos)
+    [[maybe_unused]] void erase(int index)
     {
-        int index = 0;
+        int current_position = 0;
         for (int i = 0; i < m_size; i++) {
-            if (i == pos)
+            if (i == index)
                 continue;
-            arr[index] = arr[i];
-            index++;
+            arr[current_position] = arr[i];
+            current_position++;
         }
 
         m_size--;
@@ -179,18 +179,18 @@ public:
         std::cout << std::endl;
     }
 
-    [[maybe_unused]] T at(int pos)
+    [[maybe_unused]] T at(int index)
     {
-        if (pos >= m_size) {
+        if (index >= m_size) {
             throw std::out_of_range("Bounds Error in at()");
         }
 
-       return arr[pos];
+       return arr[index];
     }
 
-    T operator[](int pos)
+    T operator[](int index)
     {
-        return arr[pos];
+        return arr[index];
     };
 
     [[maybe_unused]] void swap(Vector& other)
