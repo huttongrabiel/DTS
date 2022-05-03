@@ -75,7 +75,6 @@ public:
         m_size++;
     }
 
-
     [[maybe_unused]] void replace(T elem, int index)
     {
         if (index == capacity)
