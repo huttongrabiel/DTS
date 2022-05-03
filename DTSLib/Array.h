@@ -62,6 +62,16 @@ struct Array {
         return arr[0];
     }
 
+    constexpr Reference back()
+    {
+        return arr[Size-1];
+    }
+
+    constexpr ConstReference back() const
+    {
+        return arr[Size-1];
+    }
+
     constexpr Reference operator[](size_t index)
     {
         return arr[index];
