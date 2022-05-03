@@ -185,18 +185,12 @@ public:
             throw std::out_of_range("Bounds Error in at()");
         }
 
-        for (int i = 0; i < m_size; i++) {
-            if (i == pos)
-                return arr[i];
-        }
+       return arr[pos];
     }
 
     T operator[](int pos)
     {
-        for (int i = 0; i < m_size; i++) {
-            if (i == pos)
-                return arr[i];
-        }
+        return arr[pos];
     };
 
     [[maybe_unused]] void swap(Vector& other)
