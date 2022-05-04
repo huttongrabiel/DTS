@@ -9,6 +9,7 @@ set(CMAKE_CXX_FLAGS "-g -Wall -std=c++2a -Werror -D CMAKE_CXX_COMPILER=/usr/bin/
 include_directories(DTSLib)
 
 add_executable(DTS
+        DTSLib/Queue.h
         DTSLib/Stack.h
         DTSLib/Array.h
         DTSLib/Vector.h)
