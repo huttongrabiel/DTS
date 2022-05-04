@@ -48,7 +48,7 @@ public:
         capacity = other.capacity;
         m_size = other.m_size;
 
-        for (int i = 0; i < other.size(); i++)
+        for (size_t i = 0; i < other.size(); i++)
             arr[i] = other.arr[i];
     }
 
@@ -62,7 +62,7 @@ public:
         if (m_size == capacity) {
             T* temp = new T[2 * capacity];
 
-            for (int i = 0; i < capacity; i++) {
+            for (size_t i = 0; i < capacity; i++) {
                 temp[i] = arr[i];
             }
 
@@ -92,7 +92,7 @@ public:
             if (m_size ==  capacity) {
                 T* temp = new T[2 * capacity];
 
-                for (int i = 0; i < capacity; i++)
+                for (size_t i = 0; i < capacity; i++)
                     temp[i] = arr[i];
 
                 delete[] arr;
@@ -103,7 +103,7 @@ public:
             int pos_encountered = 0;
             T stored_t = arr[index];
             T stored_t2 = arr[index];
-            for (int i = 0; i < capacity; i++) {
+            for (size_t i = 0; i < capacity; i++) {
                 if (i == index || pos_encountered) {
                     if (!pos_encountered) {
                         arr[i] = elem;
@@ -172,7 +172,7 @@ public:
 
     [[maybe_unused]] void print()
     {
-        for (int i = 0; i < m_size; i++)
+        for (size_t i = 0; i < m_size; i++)
             std::cout << arr[i] << " ";
 
         std::cout << std::endl;
