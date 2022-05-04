@@ -1,5 +1,5 @@
 /*
- * Copyright 2022, Whuty
+ * Copyright 2022, Hutton Grabiel
  */
 
 #include <catch2/catch_test_macros.hpp>
