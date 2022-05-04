@@ -9,11 +9,13 @@ include_directories("../DTSLib"
 find_package(Catch2 3 REQUIRED)
 
 set(TEST_SOURCE
+        TestQueue.cpp
         TestStack.cpp
         TestArray.cpp
         TestVector.cpp)
 
 set(SOURCE_HEADERS
+        ../DTSLib/Queue.h
         ../DTSLib/Stack.h
         ../DTSLib/Array.h
         ../DTSLib/Vector.h)
