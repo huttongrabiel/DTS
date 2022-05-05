@@ -75,7 +75,7 @@ public:
         m_size++;
     }
 
-    [[maybe_unused]] void replace(T elem, int index)
+    [[maybe_unused]] void replace(T elem, size_t index)
     {
         if (index == capacity)
             push_back(elem);
@@ -83,9 +83,9 @@ public:
             arr[index] = elem;
     }
 
-    [[maybe_unused]] void insert(T elem, int index)
+    [[maybe_unused]] void insert(T elem, size_t index)
     {
-        if (index == capacity) {
+        if (index == capacity || (index == 0 && capacity == 1)) {
             push_back(elem);
         }
         else {
@@ -124,10 +124,10 @@ public:
         }
     };
 
-    [[maybe_unused]] void erase(int index)
+    [[maybe_unused]] void erase(size_t index)
     {
         int current_position = 0;
-        for (int i = 0; i < m_size; i++) {
+        for (size_t i = 0; i < m_size; i++) {
             if (i == index)
                 continue;
             arr[current_position] = arr[i];
@@ -137,12 +137,12 @@ public:
         m_size--;
     };
 
-    [[maybe_unused]] void erase(int start, int end)
+    [[maybe_unused]] void erase(size_t start, size_t end)
     {
-        int index = 0;
+        size_t index = 0;
         int erase_count = 0;
 
-        for (int i = 0; i < m_size; i++) {
+        for (size_t i = 0; i < m_size; i++) {
             if (i >= start && i < end) {
                 erase_count++;
                 continue;
@@ -160,7 +160,7 @@ public:
 
         auto popped_element = arr[m_size-1];
 
-        for (int i = 0; i < m_size-1; i++)
+        for (size_t i = 0; i < m_size-1; i++)
             temp[i] = arr[i];
 
         delete[] arr;
@@ -178,7 +178,7 @@ public:
         std::cout << std::endl;
     }
 
-    [[maybe_unused]] T at(int index)
+    [[maybe_unused]] T at(size_t index)
     {
         if (index >= m_size) {
             throw std::out_of_range("Bounds Error in at()");
@@ -187,7 +187,7 @@ public:
        return arr[index];
     }
 
-    T operator[](int index)
+    T operator[](size_t index)
     {
         return arr[index];
     };
@@ -217,7 +217,7 @@ public:
         if (this->size() != other.size()) {
             T* temp = new T[other.size()];
 
-            for (int i = 0; i <= other.size(); i++) {
+            for (size_t i = 0; i <= other.size(); i++) {
                 temp[i] = other.arr[i];
             }
 
@@ -225,7 +225,7 @@ public:
             arr = temp;
         }
         else {
-            for (int i = 0; i < other.size(); i++) {
+            for (size_t i = 0; i < other.size(); i++) {
                 arr[i] = other.arr[i];
             }
         }
@@ -241,7 +241,7 @@ public:
         if (other.m_size != m_size)
            return false;
 
-        for (int i = 0; i < m_size; i++)
+        for (size_t i = 0; i < m_size; i++)
             if (arr[i] != other.arr[i])
                 return false;
 
