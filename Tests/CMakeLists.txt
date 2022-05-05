@@ -9,6 +9,7 @@ include_directories("../DTSLib"
 find_package(Catch2 3 REQUIRED)
 
 set(TEST_SOURCE
+        TestDeque.cpp
         TestQueue.cpp
         TestStack.cpp
         TestArray.cpp
