@@ -51,6 +51,31 @@ public:
         deque.erase(index);
     }
 
+    void erase(size_t start, size_t end)
+    {
+        deque.erase(start, end);
+    }
+
+    void clear()
+    {
+        deque.clear();
+    }
+
+    T* data()
+    {
+        return deque.data();
+    }
+
+    T at(size_t index)
+    {
+        return deque.at(index);
+    }
+
+    void replace(T elem, size_t index)
+    {
+       deque.replace(elem, index);
+    }
+
     void push_front(T& value)
     {
         deque.insert(value, 0);
@@ -63,22 +88,16 @@ public:
 
     T pop_front()
     {
-        return deque.at(0);
+        T front = deque.front();
+        deque.erase(0);
+        return front;
     }
 
     T pop_front() const
     {
-        return deque.at(0);
-    }
-
-    T at(size_t index)
-    {
-        deque.at(index);
-    }
-
-    void swap(Vector<T>& other)
-    {
-        deque.swap(other);
+        T front = deque.front();
+        deque.erase(0);
+        return front;
     }
 
     T operator[](size_t index)
