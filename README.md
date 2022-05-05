@@ -57,15 +57,15 @@ Not worried about the why, just exploring.
 - [ ] string *
 - [ ] string_view
 
-- [ ] array *
-- [ ] deque
+- [X] array *
+- [X] deque
 - [ ] forward_list
 - [ ] list
 - [ ] map
-- [ ] queue
+- [X] queue
 - [ ] set
 - [ ] span
-- [ ] stack
+- [X] stack
 - [ ] unordered_map
 - [ ] unordered_set
 - [X] vector *   
