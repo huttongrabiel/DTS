@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <Vector.h>
+#include <Deque.h>
 
 namespace DTS {
 
@@ -33,23 +33,16 @@ public:
 
     T pop()
     {
-        // FIXME: Change to return queue.pop_front once we implement deque
-        T popped_value = queue.front();
-        queue.erase(0);
-        return popped_value;
+        return queue.pop_front();
     }
 
     T pop() const
     {
-        // FIXME: Change to return queue.pop_front once we implement deque
-        T popped_value = queue.front();
-        queue.erase(0);
-        return popped_value;
+        return queue.pop_front();
     }
 
 private:
-    // FIXME: Change to deque once we implement it
-    Vector<T> queue;
+    Deque<T> queue;
 };
 
 }
