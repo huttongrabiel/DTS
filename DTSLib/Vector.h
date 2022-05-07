@@ -85,7 +85,7 @@ public:
 
     [[maybe_unused]] void insert(T elem, size_t index)
     {
-        if (index == capacity || (index == 0 && capacity == 1)) {
+        if (index == capacity) {
             push_back(elem);
         }
         else {

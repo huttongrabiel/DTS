@@ -154,3 +154,13 @@ TEST_CASE( "Strings" ) {
     REQUIRE(v.size() == 2);
 }
 
+TEST_CASE( "Inserting when only one element in existing vector" ) {
+    DTS::Vector<int> v;
+
+    v.push_back(2);
+
+    v.insert(1,0);
+
+    REQUIRE( v[0] == 1 );
+}
+
