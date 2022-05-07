@@ -89,7 +89,7 @@ public:
             push_back(elem);
         }
         else {
-            if (m_size ==  capacity) {
+            if (m_size == capacity) {
                 T* temp = new T[2 * capacity];
 
                 for (size_t i = 0; i < capacity; i++)
