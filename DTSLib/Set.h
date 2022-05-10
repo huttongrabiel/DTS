@@ -5,6 +5,7 @@
 #pragma once
 
 #include <Vector.h>
+#include <Iterator.h>
 
 namespace DTS {
 
@@ -100,18 +101,6 @@ public:
        return false;
    }
 
-   // FIXME: Should return an iterator to the element. Fix once iterator is implemented
-   bool find(T&& value)
-   {
-        return count(value);
-   }
-
-   // FIXME: Should return an iterator to the element. Fix once iterator is implemented
-   bool find(const T& value)
-   {
-       return count(value);
-   }
-
    void erase(T&& value)
    {
        size_t set_size = set.size();
@@ -133,6 +122,31 @@ public:
 
        set.erase(erase_index);
    }
+
+    using Iterator = DTS::Iterator<Set, T>;
+    using ConstIterator = DTS::Iterator<Set const, T const>;
+
+    Iterator begin() { return Iterator::begin(*this); }
+    Iterator end() { return Iterator::end(*this); }
+
+    Iterator find(T&& value)
+    {
+        for(Iterator it = begin(); it < end(); ++it) {
+            if (*it == value) {
+                return it;
+            }
+        }
+        return end();
+    }
+
+    ConstIterator find(const T& value)
+    {
+        for(auto it = begin(); it < end(); ++it) {
+            if (*it == value)
+                return it;
+        }
+        return end();
+    }
 
    void clear()
    {
