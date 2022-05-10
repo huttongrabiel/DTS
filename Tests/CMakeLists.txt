@@ -17,6 +17,7 @@ set(TEST_SOURCE
         TestVector.cpp)
 
 set(SOURCE_HEADERS
+        ../DTSLib/Iterator.h
         ../DTSLib/Set.h
         ../DTSLib/Queue.h
         ../DTSLib/Stack.h
