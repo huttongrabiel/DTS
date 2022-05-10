@@ -12,6 +12,8 @@ template<typename T>
 class Set {
 public:
 
+    Set() = default;
+
    [[nodiscard]] bool is_empty() { return size() == 0; }
 
    [[nodiscard]] size_t size() { return set.size(); }
