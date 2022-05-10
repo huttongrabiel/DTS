@@ -13,10 +13,6 @@ TEST_CASE( "Construct Set" ) {
 }
 
 TEST_CASE( "Basic Function Tests" ) {
-    /*
-     * data
-     */
-
     DTS::Set<int> set;
 
     set.insert(3);
@@ -30,9 +26,8 @@ TEST_CASE( "Basic Function Tests" ) {
     REQUIRE( set.contains(5) );
     REQUIRE( !set.contains(1) );
 
-    // TODO: Change once find is modified to return an iterator
-    REQUIRE( set.find(3) );
-    REQUIRE( !set.find(4) );
+    REQUIRE( set.find(3) !=  set.end() );
+    REQUIRE( set.find(4) == set.end() );
 
     set.insert(7);
     set.insert(0);
@@ -63,4 +58,26 @@ TEST_CASE( "Basic Function Tests" ) {
     auto const data = set.data();
 
     REQUIRE( *data == 3 );
+
+    set.insert(8);
+    set.insert(9);
+
+    set.erase(3);
+
+    REQUIRE( set.find(3) == set.end() );
+}
+
+TEST_CASE( "Set Strings" ) {
+    DTS::Set<std::string> set;
+
+    set.insert("zoo");
+    set.insert("ant");
+
+    REQUIRE( set.find("ant") < set.find("zoo") );
+
+    set.insert("zoo");
+
+    REQUIRE( set.size() == 2);
+
+    REQUIRE( *set.data() == "ant" );
 }
