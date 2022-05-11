@@ -17,7 +17,7 @@ private:
     template<typename Container>
     static void quickSort(int low, int high, Container& container) {
         if (low < high) {
-            int pivot = partition(low, high, container);
+            auto pivot = partition(low, high, container); // Must be auto to allow for strings, ints, floats, etc.
 
             quickSort(low, pivot - 1, container);
             quickSort(pivot + 1, high, container);
@@ -26,7 +26,7 @@ private:
 
     template<typename Container>
     static int partition(int low, int high, Container& container) {
-        int pivot = container[high];
+        auto pivot = container[high]; // Must be auto to allow for strings, ints, floats, etc.
         int i = low - 1;
         for (int j = low; j < high; j++) {
             if (container[j] < pivot) {
