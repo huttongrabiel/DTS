@@ -187,7 +187,7 @@ public:
        return arr[index];
     }
 
-    T operator[](size_t index)
+    T& operator[](size_t const& index)
     {
         return arr[index];
     };
