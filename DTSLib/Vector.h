@@ -214,6 +214,9 @@ public:
 
     Vector& operator=(const Vector& other)
     {
+        if (this == other)
+            return *this;
+
         if (this->size() != other.size()) {
             T* temp = new T[other.size()];
 
