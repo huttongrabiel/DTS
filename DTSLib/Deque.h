@@ -100,7 +100,7 @@ public:
         return front;
     }
 
-    T operator[](size_t index)
+    T& operator[](size_t const& index)
     {
         return deque[index];
     }
