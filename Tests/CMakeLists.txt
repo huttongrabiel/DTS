@@ -9,6 +9,7 @@ include_directories("../DTSLib"
 find_package(Catch2 3 REQUIRED)
 
 set(TEST_SOURCE
+        TestQuickSort.cpp
         TestSet.cpp
         TestDeque.cpp
         TestQueue.cpp
@@ -17,6 +18,7 @@ set(TEST_SOURCE
         TestVector.cpp)
 
 set(SOURCE_HEADERS
+        ../DTSLib/QuickSort.h
         ../DTSLib/Iterator.h
         ../DTSLib/Set.h
         ../DTSLib/Queue.h
