@@ -59,12 +59,13 @@ public:
     Iterator end() { return Iterator::end(*this); }
     Iterator begin() { return Iterator::begin(*this); }
 
-    String& operator=(const char* arr)
+    String& operator=(String const& arr)
     {
-        if (m_arr == arr)
+        if (this == &arr)
            return *this;
 
-        m_arr = arr;
+        m_arr = arr.m_arr;
+        m_size = arr.m_size;
         return *this;
     }
 
