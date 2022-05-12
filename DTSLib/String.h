@@ -68,6 +68,22 @@ public:
         return *this;
     }
 
+    bool operator==(const String& other) const
+    {
+        if (this->m_arr == other.m_arr)
+            return true;
+
+        return false;
+    }
+
+    bool operator==(String&& other) const
+    {
+        if (this->m_arr == other.m_arr)
+            return true;
+
+        return false;
+    }
+
     char operator[](size_t const& index) const
     {
         return m_arr[index];
