@@ -48,6 +48,11 @@ public:
         *this = temp;
     }
 
+    void push_back(char value)
+    {
+        m_string.push_back(value);
+    }
+
     char at(const size_t index)
     {
         if (index > length()) {
