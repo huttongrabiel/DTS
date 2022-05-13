@@ -57,10 +57,10 @@ public:
         return m_string[index];
     }
 
-    using Iterator = DTS::Iterator<String, char>;
+    using Iterator = DTS::Iterator<DTS::String, char>;
 
-    Iterator end() { return Iterator::end(*this); }
     Iterator begin() { return Iterator::begin(*this); }
+    Iterator end() { return Iterator::end(*this); }
 
     String& operator=(String const& arr)
     {
