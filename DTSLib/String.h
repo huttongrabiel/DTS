@@ -56,6 +56,23 @@ public:
         }
     }
 
+    void replace(size_t index, String&& value)
+    {
+        size_t temp_index = 0;
+        size_t result_length = value.size()+index;
+        for (size_t i = index; i < result_length; i++) {
+            char val;
+            i >= index ? val = value[temp_index] : val = m_string[temp_index];
+
+            temp_index++;
+
+            if (i < size())
+                m_string.replace(val, i);
+            else
+                m_string.push_back(val);
+        }
+    }
+
     void push_back(char value)
     {
         m_string.push_back(value);
