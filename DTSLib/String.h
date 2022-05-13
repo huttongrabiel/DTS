@@ -9,11 +9,7 @@ namespace DTS {
 
 class String {
 public:
-    String()
-    {
-        m_arr = new char[1];
-        m_size = 0;
-    }
+    String() = default;
 
     String(const char* arr)
     {
