@@ -11,9 +11,9 @@ class String {
 public:
     String() = default;
 
-    String(const char* arr)
+    String(const char* other)
     {
-        m_arr = arr;
+        m_arr = other;
         m_size = 0;
         for (auto it = m_arr; *it != 0; it++) {
             m_size++;
