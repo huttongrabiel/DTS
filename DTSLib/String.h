@@ -4,6 +4,7 @@
 
 #pragma once
 #include <Iterator.h>
+#include <Vector.h>
 
 namespace DTS {
 
@@ -13,25 +14,24 @@ public:
 
     String(const char* other)
     {
-        m_arr = other;
-        m_size = 0;
-        for (auto it = m_arr; *it != 0; it++) {
-            m_size++;
+        while (*other != 0) {
+            m_string.push_back(*other);
+            other++;
         }
     }
 
-    [[nodiscard]] size_t length() const { return m_size; }
+    [[nodiscard]] size_t length() const { return size(); }
 
-    [[nodiscard]] size_t size() const { return length(); }
+    [[nodiscard]] size_t size() const { return m_string.size(); }
 
     char front() noexcept
     {
-        return m_arr[0];
+        return m_string.front();
     }
 
     const char* data()
     {
-        return m_arr;
+        return m_string.data();
     }
 
     void swap(String& other)
@@ -47,7 +47,7 @@ public:
             throw std::out_of_range("Index out of Range");
         }
 
-        return m_arr[index];
+        return m_string[index];
     }
 
     using Iterator = DTS::Iterator<String, char>;
@@ -57,38 +57,28 @@ public:
 
     String& operator=(String const& arr)
     {
-        if (this == &arr)
+        if (m_string == arr.m_string)
            return *this;
 
-        m_arr = arr.m_arr;
-        m_size = arr.m_size;
+        m_string = arr.m_string;
         return *this;
     }
 
-    bool operator==(const String& other) const
+    bool operator==(const String& other)
     {
-        if (this->m_arr == other.m_arr)
+        if (this->m_string == other.m_string)
             return true;
 
         return false;
     }
 
-    bool operator==(String&& other) const
+    char operator[](size_t const& index)
     {
-        if (this->m_arr == other.m_arr)
-            return true;
-
-        return false;
-    }
-
-    char operator[](size_t const& index) const
-    {
-        return m_arr[index];
+        return m_string[index];
     }
 
 private:
-    const char* m_arr;
-    size_t m_size;
+    DTS::Vector<char> m_string;
 };
 
 }
