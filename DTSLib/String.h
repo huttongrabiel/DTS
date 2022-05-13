@@ -48,6 +48,14 @@ public:
         *this = temp;
     }
 
+    void insert(size_t position, String&& value)
+    {
+        for (auto item : value) {
+            m_string.insert(item, position);
+            position++;
+        }
+    }
+
     void push_back(char value)
     {
         m_string.push_back(value);
