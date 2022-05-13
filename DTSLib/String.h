@@ -41,6 +41,13 @@ public:
         *this = temp;
     }
 
+    void swap(String&& other)
+    {
+        String temp = other;
+        other = *this;
+        *this = temp;
+    }
+
     char at(const size_t index)
     {
         if (index > length()) {
