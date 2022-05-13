@@ -239,7 +239,7 @@ public:
         return *this;
     }
 
-    bool operator==(const Vector& other)
+    bool operator==(const Vector& other) const
     {
         if (other.m_size != m_size)
            return false;

@@ -76,7 +76,7 @@ public:
         return *this;
     }
 
-    bool operator==(const String& other)
+    bool operator==(const String& other) const
     {
         if (this->m_string == other.m_string)
             return true;
