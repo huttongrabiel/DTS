@@ -83,7 +83,7 @@ public:
             arr[index] = elem;
     }
 
-    [[maybe_unused]] void insert(T elem, size_t index)
+    [[maybe_unused]] void insert(T const& elem, size_t index)
     {
         if (index == capacity) {
             push_back(elem);
