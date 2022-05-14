@@ -29,6 +29,11 @@ public:
         return m_string.front();
     }
 
+    void clear()
+    {
+        m_string.clear();
+    }
+
     const char* data()
     {
         return m_string.data();
