@@ -99,6 +99,18 @@ public:
     Iterator begin() { return Iterator::begin(*this); }
     Iterator end() { return Iterator::end(*this); }
 
+    Iterator max_element(Iterator begin, Iterator const& end)
+    {
+        Iterator max_element = begin;
+        while (begin != end) {
+            if (*begin > *max_element)
+                max_element = begin;
+            begin++;
+        }
+
+        return max_element;
+    }
+
     String& operator=(String const& arr)
     {
         if (m_string == arr.m_string)
