@@ -1,12 +1,15 @@
 # DTS Lib
-Recreating stdlib in dtslib. Probably a terrible idea but will make me
-better. 
+Recreating stdlib in DTSlib.
 
 # Reason
 1. It seems fun and that is most important
 2. What better way to learn C++  
 
 Not worried about the why, just exploring.
+
+# Note
+This will still pull in stdlib because parts still require it and we
+don't pass the ```-nostdlib``` flag to gcc.
 
 # To Be Implemented
 - [ ] any
@@ -63,14 +66,14 @@ Not worried about the why, just exploring.
 - [ ] list
 - [ ] map
 - [X] queue
-- [ ] set
+- [X] set
 - [ ] span
 - [X] stack
 - [ ] unordered_map
 - [ ] unordered_set
 - [X] vector *   
 
-- [ ] iterator *   
+- [X] iterator *   
 
 - [ ] ranges *  
 
