@@ -128,6 +128,24 @@ public:
         return false;
     }
 
+    String operator+(String& other)
+    {
+        for (auto val : other) {
+            m_string.push_back(val);
+        }
+
+        return *this;
+    }
+
+    String operator+(String&& other)
+    {
+        for (auto val : other) {
+            m_string.push_back(val);
+        }
+
+        return *this;
+    }
+
     char operator[](size_t const& index)
     {
         return m_string[index];
