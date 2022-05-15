@@ -24,7 +24,7 @@ public:
 
     [[nodiscard]] size_t size() const { return m_string.size(); }
 
-    [[nodiscard]] size_t max_size() const { return m_string.max_size(); }
+    [[nodiscard]] size_t capacity() const { return m_string.max_size(); }
 
     char front() noexcept
     {
