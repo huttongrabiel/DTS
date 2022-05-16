@@ -111,6 +111,14 @@ public:
         return max_element;
     }
 
+    void to_upper()
+    {
+        for (size_t i = 0; i < length(); i++) {
+            if (is_lower(m_string[i]))
+                m_string[i] = m_string[i] - 32;
+        }
+    }
+
     String& operator=(String const& arr)
     {
         if (m_string == arr.m_string)
@@ -146,13 +154,29 @@ public:
         return *this;
     }
 
-    char operator[](size_t const& index)
+    char& operator[](size_t const& index)
     {
         return m_string[index];
     }
 
 private:
     DTS::Vector<char> m_string;
+
+    bool is_lower(char&& letter) const
+    {
+        if (letter < 123 && letter > 60)
+            return true;
+
+        return false;
+    }
+
+    [[nodiscard]] bool is_lower(char const& letter) const
+    {
+        if (letter < 123 && letter > 60)
+            return true;
+
+        return false;
+    }
 };
 
 }
