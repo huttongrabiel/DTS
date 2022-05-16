@@ -82,7 +82,7 @@ private:
     {
     }
 
-    Container& m_container;
+    Container m_container;
     size_t m_index;
 };
 
