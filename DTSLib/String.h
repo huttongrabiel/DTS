@@ -177,6 +177,22 @@ private:
 
         return false;
     }
+
+    bool is_upper(char&& letter) const
+    {
+        if (letter < 91 && letter > 64)
+            return true;
+
+        return false;
+    }
+
+    [[nodiscard]] bool is_upper(char const& letter) const
+    {
+        if (letter < 91 && letter > 64)
+            return true;
+
+        return false;
+    }
 };
 
 }
