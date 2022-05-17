@@ -164,7 +164,7 @@ private:
 
     bool is_lower(char&& letter) const
     {
-        if (letter < 123 && letter > 60)
+        if (letter < 123 && letter > 96)
             return true;
 
         return false;
@@ -172,7 +172,7 @@ private:
 
     [[nodiscard]] bool is_lower(char const& letter) const
     {
-        if (letter < 123 && letter > 60)
+        if (letter < 123 && letter > 96)
             return true;
 
         return false;
