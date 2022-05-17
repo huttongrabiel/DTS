@@ -119,6 +119,14 @@ public:
         }
     }
 
+    void to_lower()
+    {
+        for (size_t i = 0; i < length(); i++) {
+            if (is_upper(m_string[i]))
+                m_string[i] = m_string[i] + 32;
+        }
+    }
+
     String& operator=(String const& arr)
     {
         if (m_string == arr.m_string)
