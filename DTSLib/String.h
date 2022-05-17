@@ -170,7 +170,7 @@ public:
 private:
     DTS::Vector<char> m_string;
 
-    bool is_lower(char&& letter) const
+    static bool is_lower(char&& letter)
     {
         if (letter < 123 && letter > 96)
             return true;
@@ -178,7 +178,7 @@ private:
         return false;
     }
 
-    [[nodiscard]] bool is_lower(char const& letter) const
+    [[nodiscard]] static bool is_lower(char const& letter)
     {
         if (letter < 123 && letter > 96)
             return true;
@@ -186,7 +186,7 @@ private:
         return false;
     }
 
-    bool is_upper(char&& letter) const
+    static bool is_upper(char&& letter)
     {
         if (letter < 91 && letter > 64)
             return true;
@@ -194,7 +194,7 @@ private:
         return false;
     }
 
-    [[nodiscard]] bool is_upper(char const& letter) const
+    [[nodiscard]] static bool is_upper(char const& letter)
     {
         if (letter < 91 && letter > 64)
             return true;
