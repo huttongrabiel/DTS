@@ -94,6 +94,21 @@ public:
         return m_string[index];
     }
 
+    DTS::String substr(size_t const& start_index, size_t&& strlen)
+    {
+        if (start_index > this->size())
+            throw std::out_of_range("Start index of substring cannot be greater than size of string!");
+
+        if (strlen + start_index > this->size())
+            strlen = this->size() - start_index;
+
+        DTS::String str = "";
+        for (size_t i = start_index; i < strlen+start_index; i++) {
+            str.push_back(this->m_string[i]);
+        }
+        return str;
+    }
+
     using Iterator = DTS::Iterator<DTS::String, char>;
 
     Iterator begin() { return Iterator::begin(*this); }
