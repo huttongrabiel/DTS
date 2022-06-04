@@ -5,6 +5,7 @@
 #pragma once
 
 #include <iostream>
+#include <concepts>
 
 /*
  *  - constructor         X
@@ -32,6 +33,17 @@
 namespace DTS {
 
 template<typename T>
+concept Valid_Sequence_Item =
+    requires(T a, T b) {
+        { a==b } -> std::convertible_to<bool>;
+        { a!=b } -> std::convertible_to<bool>;
+        { a>b }  -> std::convertible_to<bool>;
+        { a<b }  -> std::convertible_to<bool>;
+        { a>=b } -> std::convertible_to<bool>;
+        { a<=b } -> std::convertible_to<bool>;
+    };
+
+template<Valid_Sequence_Item T>
 class Vector {
     T* arr;
     size_t capacity;
