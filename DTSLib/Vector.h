@@ -64,6 +64,15 @@ public:
             arr[i] = other.arr[i];
     }
 
+    Vector(Vector&& other) {
+        arr = new T[other.m_size];
+        capacity = other.capacity;
+        m_size = other.m_size;
+
+        for (size_t i = 0; i < other.size(); i++)
+            arr[i] = other.arr[i];
+    }
+
     Vector(std::initializer_list<T> const& init_list) {
         arr = new T[init_list.size()];
         for (size_t i = 0; i < init_list.size(); i++) {
@@ -256,6 +265,15 @@ public:
 
         capacity = other.size();
         m_size = other.size();
+
+        return *this;
+    }
+
+    Vector& operator=(Vector&& other) {
+        if (*this == other)
+            return *this;
+
+        *this = other;
 
         return *this;
     }
