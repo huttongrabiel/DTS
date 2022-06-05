@@ -64,6 +64,15 @@ public:
             arr[i] = other.arr[i];
     }
 
+    Vector(std::initializer_list<T> const& init_list) {
+        arr = new T[init_list.size()];
+        for (size_t i = 0; i < init_list.size(); i++) {
+            arr[i] = *(init_list.begin() + i);;
+        }
+        m_size = init_list.size();
+        capacity = init_list.size();
+    }
+
     ~Vector()
     {
         delete[] arr;
