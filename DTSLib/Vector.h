@@ -230,7 +230,7 @@ public:
 
         auto temp1 = capacity;
         capacity = other.capacity;
-        other.capacity = temp;
+        other.capacity = temp1;
 
         T* temp2 = arr;
         arr = other.arr;
