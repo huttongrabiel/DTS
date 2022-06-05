@@ -3,3 +3,5 @@ Build/
 cmake-build-debug/
 .idea
 Test.cpp
+
+compile_commands.json
